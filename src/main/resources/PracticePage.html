@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<style>
+legend {
+	font-size: 14px;
+	width: auto;
+	color: #fff;
+	background: #2b3636;
+	padding: 0.25em 1em;
+	border-radius: 1em;
+}
+
+fieldset {
+	font-size: 14px;
+	/* border: 2px solid #000; */
+	/*padding: 1em;*/
+	padding: .2em;
+	border-radius: 0.5em;
+}
+
+label {
+	display: block;
+	cursor: pointer;
+	line-height: 2;
+	font-size: 1em;
+}
+
+body {
+	font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+.left-align {
+	float: left;
+}
+
+.right-align {
+	font-family: "Trebuchet MS", Arial, sans-serif;
+	/*width:400px; */
+	/*margin-left: 100px;*/
+	float: right;
+}
+
+.cen-align {
+	font-family: "Trebuchet MS", Arial, sans-serif;
+	/*width:400px; */
+	margin-left: 150px;
+	margin-right: 100px;
+	float: left;
+	margin-left: 150px;
+}
+
+.cen-left-align {
+	font-family: "Trebuchet MS", Arial, sans-serif;
+	/*width:400px; */
+	margin-left: 70px;
+	margin-right: 30px;
+	float: left;
+}
+
+.cen-right-align {
+	font-family: "Trebuchet MS", Arial, sans-serif;
+	/*width:400px; */
+	margin-left: 60px;
+	margin-right: 30px;
+	float: left;
+}
+
+.block {
+	width: 900px;
+	position: relative;
+	display: inline-block;
+	margin: 0px 0px 2px 20px;
+	margin-top: 2px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	text-align: justify;
+	border-bottom: .5px solid;
+	border-bottom-color: #2b3636;
+}
+
+.large-row-spacer {
+	margin-bottom: 20px;
+}
+
+.btn-style {
+	background-color: #39949a;
+	color: white;
+	padding: 5px;
+	font-size: 14px;
+	border: none;
+	cursor: pointer;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+inputs:-webkit-input-placeholder {
+	color: #b5b5b5;
+}
+
+inputs-moz-placeholder {
+	color: #b5b5b5;
+}
+
+.inputs {
+	background: #f5f5f5;
+	font-size: 14px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: none;
+	padding: 13px 10px;
+	/* width: 270px; */
+	margin-bottom: 25px;
+	box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
+	clear: both;
+}
+
+.inputs:focus {
+	background: #fff;
+	box-shadow: 0 0 0 3px #39949a, inset 0 2px 3px rgba(0, 0, 0, 0.2), 0px
+		5px 5px rgba(0, 0, 0, 0.15);
+	outline: none;
+}
+</style>
+	<script>
+		var myWin;
+		function openWindow() {
+			myWin = window
+					.open(
+							"https://www.udemy.com/selenium-webdriver-with-java-testng-and-log4j2",
+							"myWin",
+							"width=1200, height=600, top=100, left=100, scrollbars=yes, resizable=yes");
+		}
+		function winFocus() {
+			myWin.focus();
+		}
+		function displayAlert() {
+			var value = document.getElementById("name").value;
+			alert("Hello " + value
+					+ ", share this practice page and share your knowledge");
+			document.getElementById("name").value = "";
+		}
+		function displayConfirm() {
+			var value = document.getElementById("name").value;
+			confirm("Hello " + value + ", Are you sure you want to confirm?")
+			document.getElementById("name").value = "";
+		}
+		function hideElement() {
+			var x = document.getElementById("displayed-text");
+			//style.visibility = "hidden";
+			x.style.display = "none";
+		}
+		function showElement() {
+			var x = document.getElementById("displayed-text");
+			//style.visibility = "visible";
+			x.style.display = "block";
+		}
+	</script>
+	<h1>练习</h1>
+	<div class="block large-row-spacer">
+		<div class="left-align" id="radio-btn-example">
+			<fieldset>
+				<legend>Radio Button 示例</legend>
+				<label for="apple"> <input id="appleradio" value="apple"
+					name="fruit" type="radio"> 苹果<br />
+				</label> <label for="orange"> <input id="orangeradio" value="orange"
+					name="fruit" type="radio"> 桔子<br />
+				</label> <label for="peach"> <input id="peachradio" value="peach"
+					name="fruit" type="radio"> 桃子<br />
+				</label>
+			</fieldset>
+		</div>
+		<div class="cen-left-align">
+			<fieldset>
+				<legend>Multiple Select 示例</legend>
+				<select id="multiple-select-example" multiple="" size="3"
+					name="multiple-select-example">
+					<option value="apple">苹果</option>
+					<option value="orange">桔子</option>
+					<option value="peach">桃子</option>
+				</select>
+			</fieldset>
+		</div>
+		<div class="cen-right-align" id="select-class-example">
+			<fieldset>
+				<legend>Select 下拉列表 示例</legend>
+				<select id="fruitselect" name="fruit">
+					<option value="apple">苹果</option>
+					<option value="orange">桔子</option>
+					<option value="peach">桃子</option>
+				</select>
+			</fieldset>
+		</div>
+		<div class="right-align" id="checkbox-example">
+			<fieldset>
+				<legend>Checkbox 示例</legend>
+				<label for="apple"> <input id="applecheck" value="apple"
+					name="fruit" type="checkbox"> 苹果<br />
+				</label> <label for="orange"> <input id="orangecheck" value="orange"
+					name="fruit" type="checkbox"> 桔子<br />
+				</label> <label for="peach"> <input id="peachcheck" value="peach"
+					name="fruit" type="checkbox"> 桃子<br />
+				</label>
+			</fieldset>
+		</div>
+
+	</div>
+	<div class="block large-row-spacer">
+		<div class="left-align">
+			<fieldset>
+				<legend>Switch Window 示例</legend>
+				<button id="openwindow" class="btn-style class1"
+					onclick="openWindow()">打开新窗口</button>
+			</fieldset>
+		</div>
+		<div class="cen-align">
+			<fieldset>
+				<legend>Switch Tab 示例</legend>
+				<a id="opentab" class="btn-style class1 class2"
+					href="https://www.udemy.com/selenium-webdriver-with-java-testng-and-log4j2"
+					target="_blank">打开新 Tab</a>
+			</fieldset>
+		</div>
+		<div class="right-align">
+			<fieldset>
+				<legend>Switch To Alert 示例</legend>
+				<input id="name" name="enter-name" class="inputs"
+					placeholder="请输入姓名" type="text"> <input
+					id="alertbtn" class="btn-style" value="Alert"
+					onclick="displayAlert()" type="submit"> <input
+					id="confirmbtn" class="btn-style" value="Confirm"
+					onclick="displayConfirm()" type="submit">
+			</fieldset>
+		</div>
+	</div>
+	<div class="block large-row-spacer">
+		<div class="left-align">
+			<fieldset>
+				<legend>Web 表格示例</legend>
+				<table id="product" name="courses" class="table-display" border="1">
+					<tbody>
+						<tr>
+							<th>Author</th>
+							<th>Course</th>
+							<th>Price</th>
+						</tr>
+						<tr>
+							<td>Sunny Gao</td>
+							<td>Java核心基础知识（为自动化测试准备）</td>
+							<td>20$</td>
+						</tr>
+						<tr>
+							<td>Sunny Gao</td>
+							<td>Selenium自动化测试Java版</td>
+							<td>200$</td>
+						</tr>
+						<tr>
+							<td>Sunny Gao</td>
+							<td>Appium手机自动化测试Java版</td>
+							<td>200$</td>
+						</tr>
+						<tr>
+							<td>Sunny Gao</td>
+							<td>Jmeter接口性能测试</td>
+							<td>200$</td>
+						</tr>
+					</tbody>
+				</table>
+			</fieldset>
+		</div>
+		<div class="right-align">
+			<fieldset>
+				<legend>Element Displayed 示例</legend>
+				<input id="hide-textbox" class="btn-style class2" value="隐藏"
+					onclick="hideElement()" type="submit"> <input
+					id="show-textbox" class="btn-style class2" value="显示"
+					onclick="showElement()" type="submit"> <br> <br>
+				<input id="displayed-text" name="show-hide"
+					class="inputs displayed-class" placeholder="隐藏/显示 示例"
+					type="text">
+			</fieldset>
+		</div>
+	</div>
+</body>
+</html>

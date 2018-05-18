@@ -12,4 +12,6 @@ public class Mutiple {
             System.out.println();
         }
     }
+
+
 }
